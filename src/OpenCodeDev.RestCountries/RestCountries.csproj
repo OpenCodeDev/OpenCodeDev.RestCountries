@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<AssemblyName>OpenCodeDev.RestCountries</AssemblyName>
+	<RootNamespace>OpenCodeDev.RestCountries</RootNamespace>
+	<Title>RestCountries for .NET</Title>
+	<Description>This is a Port from RestCountries in JAVA to .NET</Description>
+	<Version>0.9.0</Version>
+	<Authors>Hayim Shimshon</Authors>
+	<Company>OpenCodeDev</Company>
+	<Copyright>OpenCodeDev © 2024</Copyright>
+	<PackageProjectUrl>https://github.com/OpenCodeDev/OpenCodeDev.RestCountries</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.RestCountries</RepositoryUrl>
+	<ApplicationIcon>restcountries_logo.ico</ApplicationIcon>
+	<NuGetAuditMode>all</NuGetAuditMode>
+	<NuGetAuditLevel>high</NuGetAuditLevel>
+	<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	<PackageIcon>restcountries_logo.png</PackageIcon>
+	<PackageReadmeFile>readme.md</PackageReadmeFile>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>RestCountries, .NET8, Countries, Postal Codes</PackageTags>
+	<NeutralLanguage>en</NeutralLanguage>
+	<AssemblyVersion>$(Version)</AssemblyVersion>
+	<FileVersion>$(Version)</FileVersion>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <FrameworkReference Include="Microsoft.AspNetCore.App" />
+	  <Content Include="restcountries_logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Folder Include="Entities\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\restcountries_logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
