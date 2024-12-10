@@ -6,10 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestCountries", "src\OpenCodeDev.RestCountries\RestCountries.csproj", "{1AE42C88-CBC0-4794-98DD-8F0F95ABEDB8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A48A26D-9C34-48F8-B671-E228FF521451}"
-	ProjectSection(SolutionItems) = preProject
-		fields.md = fields.md
-		readme.md = readme.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1D43E3F9-E419-4EC9-BA60-09CE1586E99A}"
 EndProject
