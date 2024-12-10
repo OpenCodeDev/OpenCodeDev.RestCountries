@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <AssemblyName>OpenCodeDev.RestCountries.Embedded</AssemblyName>
+	  <RootNamespace>OpenCodeDev.RestCountries.Embedded</RootNamespace>
+	  <Title>RestCountries Embedded for .NET</Title>
+	  <Description> Contain all resources json versions available and supported by RestCountries.</Description>
+	  <Version>0.9.0</Version>
+	  <Authors>Hayim Shimshon</Authors>
+	  <Company>OpenCodeDev</Company>
+	  <Copyright>OpenCodeDev © 2024</Copyright>
+	  <PackageProjectUrl>https://github.com/OpenCodeDev/OpenCodeDev.RestCountries</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.RestCountries</RepositoryUrl>
+	  <ApplicationIcon>restcountries_logo.ico</ApplicationIcon>
+	  <NuGetAuditMode>all</NuGetAuditMode>
+	  <NuGetAuditLevel>high</NuGetAuditLevel>
+	  <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	  <PackageIcon>restcountries_logo.png</PackageIcon>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageTags>RestCountries, .NET8, Countries, Postal Codes</PackageTags>
+	  <NeutralLanguage>en</NeutralLanguage>
+	  <AssemblyVersion>$(Version)</AssemblyVersion>
+	  <FileVersion>$(Version)</FileVersion>
+	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <None Remove="Resources\countriesV3.1.json" />
+    <None Remove="Resources\countriesV3.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="restcountries_logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\countriesV3.1.json" />
+    <EmbeddedResource Include="Resources\countriesV3.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\restcountries_logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenCodeDev.RestCountries\RestCountries.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Versions.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Versions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Versions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
