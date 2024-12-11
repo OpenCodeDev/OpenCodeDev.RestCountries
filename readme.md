@@ -51,7 +51,7 @@ builder.Services.AddRestCountriesServices(RestCountriesEmbed.GetVersion());
 ### [OpenCodeDev.RestCountries.Embedded](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Embedded)
 
 [![](https://img.shields.io/nuget/v/OpenCodeDev.RestCountries.Embedded?label=Latest)](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Embedded)
-[![](https://img.shields.io/nuget/dt/OpenCodeDev.RestCountries?label=Downloads)](https://www.nuget.org/packages/OpenCodeDev.RestCountries)
+[![](https://img.shields.io/nuget/dt/OpenCodeDev.RestCountries?label=Downloads)](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Embedded)
 
 Since Embedded includes all available JSON versions, it increases the package size, which may not be ideal for front-end deployments. 
 However, it provides valuable resource files (all available versions) for server-side.
@@ -65,6 +65,10 @@ builder.Services.AddRestCountriesServices(RestCountriesEmbed.GetVersion("countri
 
 ```
 ### [OpenCodeDev.RestCountries.Data](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Data)
+
+[![](https://img.shields.io/nuget/v/OpenCodeDev.RestCountries.Embedded?label=Latest)](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Data)
+[![](https://img.shields.io/nuget/dt/OpenCodeDev.RestCountries?label=Downloads)](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Data)
+
 This pakage should not be installed along side Embedded and we've introduced a conflict on purpose (using RestCountriesEmbed as class) due to incompatibility.
 Embedded includes all available JSON versions and Data includes only the targeted version.
 Which means, the pakage version you have install will match the version available by the original JSON files.
