@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestCountries.Tests", "test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestCountries.Embedded", "src\OpenCodeDev.RestCountries.Embedded\RestCountries.Embedded.csproj", "{6B1015F5-E24D-40BE-B336-E173936A60CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestCountries.Data", "src\OpenCodeDev.RestCountries.Data\RestCountries.Data.csproj", "{5139FECB-DDF1-49CC-9745-3B110D394FBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{6B1015F5-E24D-40BE-B336-E173936A60CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B1015F5-E24D-40BE-B336-E173936A60CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B1015F5-E24D-40BE-B336-E173936A60CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5139FECB-DDF1-49CC-9745-3B110D394FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5139FECB-DDF1-49CC-9745-3B110D394FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5139FECB-DDF1-49CC-9745-3B110D394FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5139FECB-DDF1-49CC-9745-3B110D394FBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{1AE42C88-CBC0-4794-98DD-8F0F95ABEDB8} = {9A48A26D-9C34-48F8-B671-E228FF521451}
 		{FDDD54FA-0D67-4E12-BF19-70FB0F6424CD} = {1D43E3F9-E419-4EC9-BA60-09CE1586E99A}
 		{6B1015F5-E24D-40BE-B336-E173936A60CE} = {9A48A26D-9C34-48F8-B671-E228FF521451}
+		{5139FECB-DDF1-49CC-9745-3B110D394FBF} = {9A48A26D-9C34-48F8-B671-E228FF521451}
 	EndGlobalSection
 EndGlobal

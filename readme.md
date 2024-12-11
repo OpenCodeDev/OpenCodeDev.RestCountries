@@ -4,9 +4,29 @@
 
 
 # About this Project
-This project is inspired on restcountries.eu by Fayder Florez.
 
-This project is a direct .NET rewrite of [REST Countries Java] (Alejandro Matos).
+**RestCountries C# Port**  
+
+This C# library is a full port of the RestCountries Java API, maintaining full compatibility with the original JSON data (v3.1 & v3) structure from the project.  
+
+The library provides access to comprehensive country and region information, including time zones, languages, currencies, translations, and more.  
+
+The library offers strongly typed access to country data, making it ideal for .NET developers building apps that need country-related information.  
+
+This package is specifically adapted for use with ASP.NET, supporting dependency injection for seamless integration into ASP.NET applications.  
+
+The library uses high code test coverage for production use.  
+
+Key Features:  
+- Access country data (name, capital, region, population, area, etc.)  
+- Retrieve languages, currencies, and translations of country names.  
+- Supports time zone data for each country.  
+- Simple integration with C# applications using strongly typed objects.  
+- Compatible with original RestCountries JSON data format.  
+- Fully supports ASP.NET dependency injection for clean integration into your application.
+
+
+
 
 ## Important Information
 * We are supporting [REST Countries Java] (Alejandro Matos) Version 3, Version 3.1 and plan the maintain compatibility.
@@ -20,10 +40,12 @@ This project is a direct .NET rewrite of [REST Countries Java] (Alejandro Matos)
 
 This .NET 8 based pakage contains the core behaviour for the RestCountries without any dependencies.
 ``` cs
+using OpenCodeDev.RestCountries;
+using OpenCodeDev.RestCountries.Data;
 var builder = WebApplication.CreateBuilder(args);
 // this will make a singleton accessible through IRestCountries.
 // replace RestCountriesEmbed.GetVersion("countriesV3.1") by your local or remote verson.json file.
-builder.Services.AddRestCountriesServices(RestCountriesEmbed.GetVersion("countriesV3.1"));
+builder.Services.AddRestCountriesServices(RestCountriesEmbed.GetVersion());
 ```
 
 ### [OpenCodeDev.RestCountries.Embedded](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Embedded)
@@ -35,9 +57,24 @@ Since Embedded includes all available JSON versions, it increases the package si
 However, it provides valuable resource files (all available versions) for server-side.
 
 ``` cs
+using OpenCodeDev.RestCountries;
+using OpenCodeDev.RestCountries.Embedded;
 var builder = WebApplication.CreateBuilder(args);
 // this will make a singleton accessible through IRestCountries.
 builder.Services.AddRestCountriesServices(RestCountriesEmbed.GetVersion("countriesV3.1"));
+
+```
+### [OpenCodeDev.RestCountries.Data](https://www.nuget.org/packages/OpenCodeDev.RestCountries.Data)
+This pakage should not be installed along side Embedded and we've introduced a conflict on purpose (using RestCountriesEmbed as class) due to incompatibility.
+Embedded includes all available JSON versions and Data includes only the targeted version.
+Which means, the pakage version you have install will match the version available by the original JSON files.
+
+``` cs
+using OpenCodeDev.RestCountries;
+using OpenCodeDev.RestCountries.Data;
+var builder = WebApplication.CreateBuilder(args);
+// this will make a singleton accessible through IRestCountries.
+builder.Services.AddRestCountriesServices(RestCountriesEmbed.GetVersion());
 
 ```
 
