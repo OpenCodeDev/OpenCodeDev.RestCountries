@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+	<TargetFrameworks>net8.0;net6.0;net9.0</TargetFrameworks>
+	<ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<AssemblyName>OpenCodeDev.RestCountries</AssemblyName>
 	<RootNamespace>OpenCodeDev.RestCountries</RootNamespace>
 	<Title>RestCountries for .NET</Title>
-	<Description>This is a Port from RestCountries in JAVA to .NET</Description>
-	<Version>0.9.0</Version>
+	<Description>A C# port of the RestCountries Java API, fully compatible with the original JSON structure, adapted for ASP.NET dependency injection, and providing country data, including time zones, languages, currencies, and translations.</Description>
+	<Version>0.9.3</Version>
 	<Authors>Hayim Shimshon</Authors>
 	<Company>OpenCodeDev</Company>
 	<Copyright>OpenCodeDev © 2024</Copyright>
@@ -17,7 +17,7 @@
 	<ApplicationIcon>restcountries_logo.ico</ApplicationIcon>
 	<NuGetAuditMode>all</NuGetAuditMode>
 	<NuGetAuditLevel>high</NuGetAuditLevel>
-	<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<PackageIcon>restcountries_logo.png</PackageIcon>
 	<PackageReadmeFile>readme.md</PackageReadmeFile>
 	<RepositoryType>git</RepositoryType>
@@ -26,30 +26,38 @@
 	<AssemblyVersion>$(Version)</AssemblyVersion>
 	<FileVersion>$(Version)</FileVersion>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<PackageReleaseNotes>- Remove File Artifacts
+- Added Compatibility for .NET 6.0 and .NET 9.0</PackageReleaseNotes>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstardard2.1'">
 	  <FrameworkReference Include="Microsoft.AspNetCore.App" />
 	  <Content Include="restcountries_logo.ico" />
   </ItemGroup>
 
-  <ItemGroup>
-	  <Folder Include="Entities\NewFolder\" />
-  </ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstardard2.1'">
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Folder Include="Entities\NewFolder\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\restcountries_logo.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\restcountries_logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+
 
 </Project>
